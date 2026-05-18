@@ -1,16 +1,11 @@
-
-
-import argparse
-import gzip
-import os
 import urllib.request
 from pathlib import Path
 
 MNIST_URLS = {
-    "train-images-idx3-ubyte.gz": "http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz",
-    "train-labels-idx1-ubyte.gz": "http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
-    "t10k-images-idx3-ubyte.gz": "http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz",
-    "t10k-labels-idx1-ubyte.gz": "http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
+    "train-images-idx3-ubyte.gz": "https://storage.googleapis.com/cvdf-datasets/mnist/train-images-idx3-ubyte.gz",
+    "train-labels-idx1-ubyte.gz": "https://storage.googleapis.com/cvdf-datasets/mnist/train-labels-idx1-ubyte.gz",
+    "t10k-images-idx3-ubyte.gz": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+    "t10k-labels-idx1-ubyte.gz": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
 }
 
 
@@ -35,23 +30,7 @@ def download_mnist(data_dir: Path) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Simple neural network MNIST setup")
-    parser.add_argument(
-        "--download",
-        action="store_true",
-        help="Download MNIST dataset files into the data directory",
-    )
-    parser.add_argument(
-        "--data-dir",
-        default=str(Path(__file__).resolve().parent / "data"),
-        help="Directory where MNIST files are stored",
-    )
-    args = parser.parse_args()
-
-    if args.download:
-        data_path = Path(args.data_dir)
-        download_mnist(data_path)
-        print(f"MNIST files saved to: {data_path}")
-    else:
-        print("Simple neural network")
-        print("Run 'python main.py --download' to download the MNIST dataset.")
+    data_dir = "./mnist_data"
+    data_path = Path(data_dir)
+    download_mnist(data_path)
+    print(f"MNIST files saved to: {data_path}")
