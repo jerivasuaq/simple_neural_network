@@ -18,7 +18,7 @@ Train a simple neural network using MNIST DB.
 
 ```bash
 source .venv/bin/activate
-python main.py --download
+python main.py
 ```
 
 This will download the MNIST dataset files into the `data/` directory.
