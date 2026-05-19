@@ -4,6 +4,14 @@
 
 Train a simple neural network using MNIST DB.
 
+## SETUP
+
+For WSL for Windows, please install: 
+
+```
+sudo apt-get install python3-tk
+```
+
 ## TODO:
 
 1. Load data into numpy.
