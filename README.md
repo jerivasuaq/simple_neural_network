@@ -4,15 +4,23 @@
 
 Train a simple neural network using MNIST DB.
 
+## SETUP
+
+For WSL for Windows, please install: 
+
+```
+sudo apt-get install python3-tk
+```
+
 ## TODO:
 
-1. Download the MNIST DB.
-2. Load data into numpy.
-3. Split data between traning and testing.
+1. Load data into numpy.
+1. Split data between traning and testing.
 
 ## DONE:
 
 1. Start the repo.
+1. Download the MNIST DB.
 
 ## How to run
 
